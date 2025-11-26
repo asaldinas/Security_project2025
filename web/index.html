@@ -4,17 +4,14 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CampusHub</title>
+  <title>CampusHub — Sign in</title>
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 8vh auto; padding: 0 1rem; }
     header { display:flex; justify-content:space-between; align-items:center; }
-    .note { border:1px solid #ddd; border-radius:12px; padding:12px; margin:8px 0; }
-    .row { display:flex; gap:8px; margin:8px 0; }
-    input, textarea { width:100%; padding:8px; border-radius:8px; border:1px solid #ccc; }
-    button { padding:8px 12px; border-radius:8px; border:1px solid #ccc; background:#f7f7f7; cursor:pointer; }
+    .card { border:1px solid #e5e5e5; border-radius:14px; padding:24px; margin-top:24px; }
+    .muted { color:#666; }
+    button { padding:10px 14px; border-radius:10px; border:1px solid #ccc; background:#f7f7f7; cursor:pointer; }
     button:hover { background:#eee; }
-    .muted { color:#666; font-size:0.9em; }
-    .danger { color:#b00020; }
   </style>
 </head>
 <body>
@@ -23,20 +20,13 @@
     <nav id="nav"></nav>
   </header>
 
-  <section id="auth"></section>
-  <section id="notes" style="display:none;">
-    <h2>Your Notes</h2>
-    <div class="row">
-      <input id="title" placeholder="Title" maxlength="120"/>
-    </div>
-    <div class="row">
-      <textarea id="body" placeholder="Write a note…" rows="4" maxlength="5000"></textarea>
-    </div>
-    <div class="row">
-      <button id="create">Add Note</button>
-    </div>
-    <div id="list"></div>
+  <section class="card">
+    <h2>Welcome</h2>
+    <p class="muted">Sign in with your Google account to access your class notes.</p>
+    <p><button id="googleBtn">Continue with Google</button></p>
+    <p id="status" class="muted"></p>
   </section>
+
+  <script src="/login.js" defer></script>
 </body>
-<script src="/app.js" defer></script>
 </html>

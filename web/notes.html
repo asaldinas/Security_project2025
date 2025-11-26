@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CampusHub — Notes</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .note { border:1px solid #ddd; border-radius:12px; padding:12px; margin:8px 0; }
+    .row { display:flex; gap:8px; margin:8px 0; }
+    input, textarea { width:100%; padding:8px; border-radius:8px; border:1px solid #ccc; }
+    button { padding:8px 12px; border-radius:8px; border:1px solid #ccc; background:#f7f7f7; cursor:pointer; }
+    button:hover { background:#eee; }
+    .muted { color:#666; font-size:0.9em; }
+    .danger { color:#b00020; }
+    .right { display:flex; gap:8px; align-items:center; }
+    .title { font-weight:600; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CampusHub</h1>
+    <div class="right">
+      <span id="who" class="muted"></span>
+      <a href="/logout"><button>Log out</button></a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Your Notes</h2>
+    <div class="row">
+      <input id="title" placeholder="Title" maxlength="120" autocomplete="off"/>
+    </div>
+    <div class="row">
+      <textarea id="body" placeholder="Write a note…" rows="4" maxlength="5000"></textarea>
+    </div>
+    <div class="row">
+      <button id="create">Add Note</button>
+      <span id="msg" class="muted"></span>
+    </div>
+    <div id="list"></div>
+  </section>
+
+  <script src="/notes.js" defer></script>
+</body>
+</html>
