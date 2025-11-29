@@ -99,7 +99,7 @@ let codeVerifier; // per-login; stored in session too
 // ---------- Helpers ----------
 function requireAuth(req, res, next) {
   if (req.session?.user) return next();
-  return res.status(401).json({ error: 'Unauthorized' });
+  return res.status(403).json({ error: 'Unauthorized' });
 }
 
 function requireCsrf(req, res, next) {

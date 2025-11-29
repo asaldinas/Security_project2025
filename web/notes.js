@@ -13,7 +13,7 @@ async function ensureAuth() {
 
 async function refreshCsrf() {
   const res = await fetch('/csrf', { credentials: 'include' });
-  if (!res.ok) throw new Error('CSRF fetch failed');
+  if (!res.ok) throw new Error('Invalid CSRF token');
   const { token } = await res.json();
   CSRF = token;
 }
